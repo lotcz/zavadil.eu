@@ -2,6 +2,6 @@
 
 	return [
 
-		'error_log_path' => '/var/log/zavadil.log'
+		'error_log_path' => 'zavadil.log'
 
 	];

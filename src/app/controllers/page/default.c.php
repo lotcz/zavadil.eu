@@ -1,2 +1,3 @@
 <?php
-  $this->includeCSS('style.css');
+  $this->setMainView('cover');
+  $this->includeCSS('resources/cover.css');

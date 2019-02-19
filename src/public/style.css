@@ -1,18 +1,25 @@
-html, body {
-  height: 100%;
-}
+@import url('https://fonts.googleapis.com/css?family=Khula');
 
 body {
+  background-color: white;
+  font-family: 'Khula', sans-serif;
+}
+
+h1 {
+  margin-bottom: 0 !important;
+}
+
+.tech-item {
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.card .card-header,
+.card .card-footer {
   background-image: url('img/bg.png');
   background-repeat: repeat;
-  color: lightblue;
-  font-family: 'Khula', sans-serif;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
 
-.cover-container {
-  max-width: 42em;
-  justify-content: center;
+.tech-item .tech-icon {
+  height:35px;
 }

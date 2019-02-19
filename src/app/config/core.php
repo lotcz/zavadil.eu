@@ -2,10 +2,9 @@
 
 	return [
 
-		'site_title' => 'zEngine sample app',
-
-		'site_description' => 'Basic web app made with zEngine.',
-
+		'site_title' => 'Karel Zavadil - Software Engineer',
+		'site_description' => 'Karel Zavadil, Software Engineer',
+		'site_keywords' => 'Karel Zavadil, Software Engineer, HTML5, CSS3, PHP 7, Java, Node.js',
 		'site_author' => 'Karel Zavadil',
 
 		// will be used to create all link urls, no trailing slash
@@ -17,7 +16,7 @@
 
 		// this is application version
 		// should be identical with GIT branch name
-		'app_version' => 0.1,
+		'app_version' => 1,
 
 		// required zEngine major version (integer value)
 		'require_z_version' => 4,
@@ -30,6 +29,10 @@
 
 		// redirect here in case of unrecoverable error
 		// only applies when debug_mode is off
-		'error_page' => 'error.html'
+		'error_page' => 'error.html',
+
+		'includes' => [
+			['style.css?v=1', false, 'link_css', 'head']
+		]
 
 	];
