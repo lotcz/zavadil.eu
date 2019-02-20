@@ -1,25 +1,25 @@
 <div class="card">
 	<div class="card-header d-flex flex-row text-white">
 		<img src="img/portrait.jpg" width="75" height="75" class="m-2 rounded-circle" alt="portrait" />
-		<h1 class="p-2 card-title align-middle d-flex flex-column justify-content-center">
-			<span>Karel Zavadil</span>
-		</h1>
+		<div class="p-2 flex-column justify-content-top align-content-left">
+			<h1>Karel Zavadil</h1>
+			<h4>Software Engineer</h4>
+		</div>
 	</div>
 	<div class="card-body">
-		<h2 class="subtitle">Software Engineer</h2>
 		<div class="technologies container">
 			<div class="row">
 				<div class="tech-item col">
-					<img src="img/html5.png" alt="html5" class="tech-icon">
-					<span class="tech-label">HTML 5</span>
+					<img src="img/java.svg" alt="java" class="tech-icon">
+					<span class="tech-label">Java</span>
 				</div>
 				<div class="tech-item col">
-					<img src="img/css3.png" alt="css3" class="tech-icon">
-					<span class="tech-label">CSS 3</span>
+					<img src="img/python.svg" alt="python" class="tech-icon">
+					<span class="tech-label">Python</span>
 				</div>
 				<div class="tech-item col">
-					<img src="img/javascript.svg" alt="javascript" class="tech-icon">
-					<span class="tech-label">Javascript</span>
+					<img src="img/php.svg" alt="php" class="tech-icon">
+					<span class="tech-label">PHP 7</span>
 				</div>
 			</div>
 			<div class="row">
@@ -34,16 +34,16 @@
 			</div>
 			<div class="row">
 				<div class="tech-item col">
-					<img src="img/java.svg" alt="java" class="tech-icon">
-					<span class="tech-label">Java</span>
+					<img src="img/html5.png" alt="html5" class="tech-icon">
+					<span class="tech-label">HTML 5</span>
 				</div>
 				<div class="tech-item col">
-					<img src="img/python.svg" alt="python" class="tech-icon">
-					<span class="tech-label">Python</span>
+					<img src="img/css3.png" alt="css3" class="tech-icon">
+					<span class="tech-label">CSS 3</span>
 				</div>
 				<div class="tech-item col">
-					<img src="img/php.svg" alt="php" class="tech-icon">
-					<span class="tech-label">PHP 7</span>
+					<img src="img/javascript.svg" alt="javascript" class="tech-icon">
+					<span class="tech-label">Javascript</span>
 				</div>
 			</div>
 		</div>
