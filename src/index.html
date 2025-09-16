@@ -7,7 +7,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2.2">
 </head>
 <body>
 <div class="card">
@@ -81,9 +81,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const card = document.querySelector('.card');
             const maxTilt = 35; // Maximum tilt angle in degrees
-
+            let initialTouchX, initialTouchY;
+            let initialTiltX = 0, initialTiltY = 0;
+            
+            // Handle mouse movement
             document.addEventListener('mousemove', (e) => {
-                if (window.innerWidth <= 576) return; // Disable on mobile
+                if ('ontouchstart' in window) return; // Skip on touch devices
                 
                 const rect = card.getBoundingClientRect();
                 const centerX = rect.left + rect.width / 2;
@@ -101,10 +104,44 @@
                 card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
             });
 
-            // Reset tilt when mouse leaves the window
-            document.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            // Handle touch events
+            document.addEventListener('touchstart', (e) => {
+                const touch = e.touches[0];
+                initialTouchX = touch.clientX;
+                initialTouchY = touch.clientY;
+                initialTiltX = 0;
+                initialTiltY = 0;
             });
+
+            document.addEventListener('touchmove', (e) => {
+                e.preventDefault(); // Prevent scrolling while tilting
+                const touch = e.touches[0];
+                
+                // Calculate the touch movement
+                const deltaX = (touch.clientX - initialTouchX) / 5; // Reduced sensitivity
+                const deltaY = (touch.clientY - initialTouchY) / 5;
+                
+                // Update tilt with some momentum
+                initialTiltX = Math.max(Math.min(initialTiltX + deltaY, maxTilt), -maxTilt);
+                initialTiltY = Math.max(Math.min(initialTiltY - deltaX, maxTilt), -maxTilt);
+                
+                // Apply the tilt
+                card.style.transform = `perspective(1000px) rotateX(${initialTiltX}deg) rotateY(${initialTiltY}deg)`;
+                
+                // Update initial position for next move
+                initialTouchX = touch.clientX;
+                initialTouchY = touch.clientY;
+            });
+
+            // Reset tilt
+            const resetTilt = () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            };
+
+            // Reset handlers for both mouse and touch
+            document.addEventListener('mouseleave', resetTilt);
+            card.addEventListener('touchend', resetTilt);
+            card.addEventListener('touchcancel', resetTilt);
         });
     </script>
 </body>
