@@ -1,0 +1,1 @@
+[Tue Sep 16 19:23:53.639983 2025] [proxy:error] [pid 15:tid 29] (EAI 3)Try again: [client 192.168.80.1:41996] AH00898: DNS lookup failure for: php-fpm returned by /index.php
